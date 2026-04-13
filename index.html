@@ -4,13 +4,303 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Hola desde HTML</h1>
 
-
-
     
-    <script src="script.js"></script>
+    <!-- CLASE 3 
+     Botones 
+    <button onclick="calcular()" id="click" alt="botonclick">Click</button><br><br>
+
+    <button type="submit">Enviar</button><br><br>
+
+    <button disabled="disabled">Deshabilitado</button><br><br>
+    
+    <button type="reset">Reiniciar</button><br><br>
+
+    <button type="button">Botón</button><br><br>
+
+    Nombre y Apellido: <input type="text" placeholder="Ingrese su nombre y apellido"><br><br>
+    <input type="text" placeholder="Ingrese un número" class="primerInput"><br><br>
+    
+    <input type="text">
+    <input type="button" value="Enviar">
+    <input type="button" value="Reiniciar">
+    <input type="button" value="Botón">
+    <input type="checkbox" name="telefono" id="telefono">
+    <input type="email" name="email" id="email">
+    <input type="file" name="archivo" id="archivo">
+    <input type="date" name="fecha" id="fecha">
+
+     Lista
+     <ul type="A" id="A">
+        <li>Pera</li>
+        <li>Naranja</li>
+        <li>Ciruela</li>
+        <li>Uva</li>
+        <li>Manzana</li>
+     </ul>
+
+     <ol type="B" id="B">
+        <li>rojo</li>
+        <li>verde</li>
+        <li>azul</li>
+     </ol> -->
+
+     <!-- CLASE 4 -->
+    <!-- 1. click -->
+    <section>
+        <h2>1. Evento click</h2>
+        <button id="btnClick">Haz clic aquí</button>
+        <script>
+        // Cuando se hace clic en el botón, muestra un mensaje
+        document.getElementById('btnClick').addEventListener('click', function() {
+            alert('¡Hiciste clic en el botón!');
+        });
+        </script>
+    </section>
+
+    <!-- 2. dblclick -->
+    <section>
+        <h2>2. Evento dblclick</h2>
+        <button id="btnDblClick">Doble clic aquí</button>
+        <script>
+        // Cuando se hace doble clic en el botón, muestra un mensaje
+        document.getElementById('btnDblClick').addEventListener('dblclick', function() {
+            alert('¡Doble clic detectado!');
+        });
+        </script>
+    </section>
+
+    <!-- 3. mouseover -->
+    <section>
+        <h2>3. Evento mouseover</h2>
+        <div id="boxHover" style="padding:20px;border:1px solid #000;">Pasa el mouse por aquí</div>
+        <script>
+        // Cambia el color del fondo cuando el mouse pasa por encima
+        const boxHover = document.getElementById('boxHover');
+        boxHover.addEventListener('mouseover', function() {
+            boxHover.style.backgroundColor = '#ffd700';
+        });
+        boxHover.addEventListener('mouseout', function() {
+            boxHover.style.backgroundColor = '';
+        });
+        </script>
+    </section>
+
+    <!-- 4. keydown -->
+    <section>
+        <h2>4. Evento keydown</h2>
+        <input type="text" id="inputKeydown" placeholder="Presiona una tecla">
+        <script>
+        // Muestra en consola la tecla presionada
+        document.getElementById('inputKeydown').addEventListener('keydown', function(e) {
+            console.log('Tecla presionada:', e.key);
+        });
+        </script>
+    </section>
+
+    <!-- 5. keyup -->
+    <section>
+        <h2>5. Evento keyup</h2>
+        <input type="text" id="inputKeyup" placeholder="Escribe algo y suelta la tecla">
+        <script>
+        // Muestra en consola la tecla soltada
+        document.getElementById('inputKeyup').addEventListener('keyup', function(e) {
+            console.log('Tecla soltada:', e.key);
+        });
+        </script>
+    </section>
+
+    <!-- 6. input -->
+    <section>
+        <h2>6. Evento input</h2>
+        <input type="text" id="inputRealTime" placeholder="Escribe aquí">
+        <p id="outputInput"></p>
+        <script>
+        // Muestra en tiempo real lo que se escribe
+        document.getElementById('inputRealTime').addEventListener('input', function() {
+            document.getElementById('outputInput').textContent = `Escribiste: ${this.value}`;
+        });
+        </script>
+    </section>
+
+    <!-- 7. change -->
+    <section>
+        <h2>7. Evento change</h2>
+        <select id="selectChange">
+        <option value="">Selecciona una opción</option>
+        <option value="Opción 1">Opción 1</option>
+        <option value="Opción 2">Opción 2</option>
+        </select>
+        <p id="outputSelect"></p>
+        <script>
+        // Muestra la opción seleccionada al cambiar el select
+        document.getElementById('selectChange').addEventListener('change', function() {
+            document.getElementById('outputSelect').textContent = `Seleccionaste: ${this.value}`;
+        });
+        </script>
+    </section>
+
+    <!-- 8. submit -->
+    <section>
+        <h2>8. Evento submit</h2>
+        <form id="formSubmit">
+        <input type="text" placeholder="Tu nombre" required>
+        <button type="submit">Enviar</button>
+        </form>
+        <script>
+        // Evita que el formulario recargue la página y muestra un mensaje
+        document.getElementById('formSubmit').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulario enviado correctamente');
+        });
+        </script>
+    </section>
+
+    <!-- 9. load -->
+    <section>
+        <h2>9. Evento load</h2>
+        <p id="msgLoad">Cargando...</p>
+        <script>
+        // Cuando la página carga completamente, cambia el texto
+        window.addEventListener('load', function() {
+            document.getElementById('msgLoad').textContent = 'Página cargada completamente';
+        });
+        </script>
+    </section>
+
+    <!-- 10. scroll -->
+    <section>
+        <h2>10. Evento scroll</h2>
+        <div id="scrollBox" style="height:100px; overflow-y:scroll; border:1px solid #000; padding:5px;">
+        <p>Contenido 1</p>
+        <p>Contenido 2</p>
+        <p>Contenido 3</p>
+        <p>Contenido 4</p>
+        <p>Contenido 5</p>
+        </div>
+        <p id="scrollPos">Posición del scroll: 0px</p>
+        <script>
+        // Detecta el scroll dentro del div y muestra la posición
+        const scrollBox = document.getElementById('scrollBox');
+        const scrollPos = document.getElementById('scrollPos');
+        scrollBox.addEventListener('scroll', function() {
+            scrollPos.textContent = `Posición del scroll: ${scrollBox.scrollTop}px`;
+        });
+        </script>
+    </section>
+
+    <!-- 11. resize -->
+    <section>
+        <h2>11. Evento resize</h2>
+        <p id="sizeOutput"></p>
+        <script>
+        const sizeOutput = document.getElementById('sizeOutput');
+        // Inicializa al cargar
+        sizeOutput.textContent = `Ancho: ${window.innerWidth}px, Alto: ${window.innerHeight}px`;
+        // Actualiza al redimensionar la ventana
+        window.addEventListener('resize', function() {
+            sizeOutput.textContent = `Ancho: ${window.innerWidth}px, Alto: ${window.innerHeight}px`;
+        });
+        </script>
+    </section>
+
+    <!-- 12. contextmenu -->
+    <section>
+        <h2>12. Evento contextmenu</h2>
+        <div id="rightClickBox" style="padding:20px;border:1px solid #000;">Haz clic derecho aquí</div>
+        <script>
+        // Evita menú contextual y muestra alerta
+        document.getElementById('rightClickBox').addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Clic derecho detectado');
+        });
+        </script>
+    </section>
+
+    <!-- 13. focus -->
+    <section>
+        <h2>13. Evento focus</h2>
+        <input type="text" id="inputFocus" placeholder="Haz clic aquí">
+        <script>
+        // Cambia fondo al recibir foco
+        document.getElementById('inputFocus').addEventListener('focus', function() {
+            this.style.backgroundColor = '#d0f0ff';
+        });
+        </script>
+    </section>
+
+    <!-- 14. blur -->
+    <section>
+        <h2>14. Evento blur</h2>
+        <input type="text" id="inputBlur" placeholder="Haz clic y luego fuera">
+        <script>
+        // Cambia fondo al perder foco
+        const inputBlur = document.getElementById('inputBlur');
+        inputBlur.addEventListener('blur', function() {
+            this.style.backgroundColor = '';
+        });
+        </script>
+    </section>
+
+    <!-- 15. drag & drop -->
+    <section>
+        <h2>15. Evento drag & drop</h2>
+        <div id="dragBox" draggable="true" style="padding:20px;border:1px solid #000; display:inline-block;">Arrástrame</div>
+        <div id="dropBox" style="width:200px;height:100px;border:1px solid #000; display:inline-block; vertical-align:top; margin-left:10px;">Suéltame aquí</div>
+        <script>
+        const dragBox = document.getElementById('dragBox');
+        const dropBox = document.getElementById('dropBox');
+
+        dragBox.addEventListener('dragstart', function(e) {
+            e.dataTransfer.setData('text', e.target.id);
+        });
+
+        dropBox.addEventListener('dragover', function(e) {
+            e.preventDefault();
+        });
+
+        dropBox.addEventListener('drop', function(e) {
+            e.preventDefault();
+            const data = e.dataTransfer.getData('text');
+            const draggedElement = document.getElementById(data);
+            dropBox.appendChild(draggedElement);
+            draggedElement.style.backgroundColor = '#aaffaa';
+        });
+        </script>
+    </section>
+
+    <br>
+    <br>
+
+    <form>
+        <div id="contenedor1">
+            <div class1="mb-3">
+                <label id="email" for="exampleInputEmail1" class="form-label"></label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu Email">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+        </div>
+        
+        <div id="contenedor2">
+            <div class2="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingresa tu contraseña">
+            </div>
+        </div>
+        
+        <div id="contenedor3">
+            <div class3="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+        </div>
+    <button type="submit" class="btn btn-primary" id="button">Submit</button>
+    </form>
+
+    <script src="/clase 4/script.js"></script>
 </body>
 </html>

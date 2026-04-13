@@ -1,0 +1,61 @@
+#click{
+    background-color: green;
+}
+
+#A li{
+    color: red;
+}
+
+#B li{
+    color: blue;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    gap: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    gap: 5px;
+}
+
+#contenedor1{
+    background-color: red;
+}
+
+#contenedor2{
+    background-color: green;
+}
+
+#contenedor3{
+    background-color: yellow;
+}
+
+label{
+    font-weight: bold;
+}
+
+#button{
+    background-color: blue;
+    color: white;
+     
+    color: white;
+    border: 1px dotted black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#button:hover{
+    background-color: lightskyblue; /* da efecto al acercar el mouse al boton */
+    font-size: 18px;
+}
