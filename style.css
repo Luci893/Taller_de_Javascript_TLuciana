@@ -47,8 +47,6 @@ label{
 #button{
     background-color: blue;
     color: white;
-     
-    color: white;
     border: 1px dotted black;
     border-radius: 5px;
     padding: 10px 20px;
@@ -56,6 +54,37 @@ label{
 }
 
 #button:hover{
-    background-color: lightskyblue; /* da efecto al acercar el mouse al boton */
-    font-size: 18px;
+    background-color: lightseagreen; /* da efecto al acercar el mouse al boton */
+    font-size: 14px;
+    color: orang;
 }
+
+.btn{
+    background-color: blue;
+    color: white;
+    border: 1px dotted black;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer; /*Coloca la mano al poner la flecha del mouse encima*/
+}
+
+.fondoGris{
+    background-color: gray;
+}
+
+.fondoNegro{
+    background-color: black;
+}
+
+.texto1{
+    margin: 0;
+    padding: 2px;
+    color: rgb(7, 59, 33);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.lista1{
+    margin: 0 70px;
+}
+

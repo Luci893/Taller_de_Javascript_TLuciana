@@ -9,7 +9,6 @@
 <body>
     <h1>Hola desde HTML</h1>
 
-<<<<<<< HEAD
     
     <!-- CLASE 3 
      Botones 
@@ -19,16 +18,6 @@
 
     <button disabled="disabled">Deshabilitado</button><br><br>
     
-=======
-    <!-- CLASE 3 -->
-    <!-- Botones -->
-    <button onclick="calcular()" id="click" alt="botonclick">Click</button><br><br>
-
-    <button type="submit">Enviar</button><br><br>
-
-    <button disabled="disabled">Deshabilitado</button><br><br>
-    
->>>>>>> 99a0184bd4ebe4456d9912bb5dae6721de22981d
     <button type="reset">Reiniciar</button><br><br>
 
     <button type="button">Botón</button><br><br>
@@ -45,11 +34,7 @@
     <input type="file" name="archivo" id="archivo">
     <input type="date" name="fecha" id="fecha">
 
-<<<<<<< HEAD
      Lista
-=======
-    <!-- Lista -->
->>>>>>> 99a0184bd4ebe4456d9912bb5dae6721de22981d
      <ul type="A" id="A">
         <li>Pera</li>
         <li>Naranja</li>
@@ -62,7 +47,6 @@
         <li>rojo</li>
         <li>verde</li>
         <li>azul</li>
-<<<<<<< HEAD
      </ol> -->
 
      <!-- CLASE 4 -->
@@ -292,24 +276,25 @@
     <br>
     <br>
 
-    <form>
+    <!--Formulario-->
+    <form id="Formulario">
         <div id="contenedor1">
-            <div class1="mb-3">
-                <label id="email" for="exampleInputEmail1" class="form-label"></label>
+            <div class="mb-3">
+                <label id="email" for="exampleInputEmail1" class="form-label">Email</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu Email">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
         </div>
         
         <div id="contenedor2">
-            <div class2="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
+            <div class="mb-3">
+                <label id="contrasenia" for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingresa tu contraseña">
             </div>
         </div>
         
         <div id="contenedor3">
-            <div class3="mb-3 form-check">
+            <div id="contSub" class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
@@ -317,11 +302,18 @@
     <button type="submit" class="btn btn-primary" id="button">Submit</button>
     </form>
 
-    <script src="/clase 4/script.js"></script>
-=======
-     </ol>
+    <br>
 
-    <script src="/clase 3/script.js"></script>
->>>>>>> 99a0184bd4ebe4456d9912bb5dae6721de22981d
+    <h3 id="textoList" class=" fondoGris">Esto es una lista:</h3>
+    <ul class="lista1">
+        <li class="elem">Arroz</li>
+        <li class="elem">Harina</li>
+        <li class="elem">Huevo</li>
+    </ul>
+    
+    <p id="parrafo1">Esto es un párrafo</p>
+    <button id="btnOcultar" class="btn">Ocultar Parrafo</button>
+
+    <script src="/clase 4/script.js"></script>
 </body>
 </html>
