@@ -14,7 +14,6 @@ const primerInput = document.querySelector("input[type='text'] .primerInput #pri
 const input = document.getElementById("exampleInputEmail1") ;
 const password = document.getElementById("exampleInputPassword1");
 
-
 const form = document.getElementById("Formulario");
 
 form.addEventListener("submit", function(event){
@@ -108,6 +107,74 @@ const divModificar = document.getElementById("subCont1");
 divModificar.innerHTML += '<input type="date" class="form-control" id="exampleInputFecha">';
 
 
+/* ACTIVIDAD PRÁCTICA - SEGUNDA PARTE: */ 
+
+/* Actividad práctica:
+    ○	Crear un formulario interactivo que:
+        ■	Valide un campo de texto en tiempo real.
+        ■	Muestre un mensaje de confirmación al enviarlo. */
+
+// 1. Crea un botón que muestre un mensaje en consola al hacer clic.
+const botonMensaje = document.getElementById("btnLimpiar");
+botonMensaje.addEventListener('click', function(){
+    console.log('¡Boton Clickeado!');
+})
+
+// 2. Haz que un campo de texto cambie su color de fondo al escribir en él.
+const campoApellido = document.getElementById("exampleInputApellido");
+campoApellido.addEventListener("click", function(){
+    campoApellido.style.backgroundColor = "lightblue";
+});
+
+// 3. Implementa un contador que aumente cada vez que se haga clic en un botón.
+let contador = 0;
+
+const botonContador = document.getElementById("btnContar");
+botonContador.addEventListener('click', function(){
+    contador++;
+    console.log(`Contador: ${contador}`)
+});
+
+// 4. Muestra un mensaje de error si un campo de texto está vacío al enviar un formulario.
+
+
+// 5. Cambia la posición de un elemento cuando se pase el ratón sobre él.
+const parrafo1 = document.getElementById("parrafo1");
+parrafo1.addEventListener('mouseover', function() {
+    this.style.position = "absolute";
+    this.style.top = "700px";
+    this.style.left = "300px";
+});
+
+// 6. Detecta y muestra en la consola la tecla presionada por el usuario.
+const inputTecla = document.getElementById("inputPresionar");
+inputTecla.addEventListener('keydown', function(e) {
+    console.log('Tecla presionada:', e.key);
+});
+
+
+// 7. Implementa un botón que oculte o muestre un elemento al hacer clic (toggle).
+const botonToggle = document.getElementById("botonMostrar");
+const parrafoToggle = document.createElement("p");
+parrafoToggle.textContent = "Este es mi párrafo mostrado.";
+
+//Agrego al inicio
+document.body.appendChild(parrafoToggle);
+
+botonToggle.addEventListener('click', function(){
+    // Si esta oculto, lo muestra
+    if(parrafoToggle.style.display === "none"){ 
+        parrafoToggle.style.display = "block";
+    } else {
+        //Si esta visible, lo oculta
+        parrafoToggle.style.display = "none";
+    }
+});
+
+// 8. Crea un campo de selección (dropdown) que actualice un párrafo con la opción seleccionada.
+// 9. Implementa un formulario con validación para correos electrónicos.
+// 10. Haz un evento que cambie el texto de un botón al hacer clic en él.
+
 /* PRACTICA EN CLASE - OBJETOS Y ARREGLOS
 // Objetos
 const persona = {
@@ -169,7 +236,7 @@ const suma = numeros4.reduce(function(acumulador, numero){
 },0); 
 console.log(suma); */
 
-// ACTIVIDAD PRÁCTICA - SEGUNDA PARTE:
+/* ACTIVIDAD PRÁCTICA - TERCERA PARTE: */
 
 /* Crear un arreglo de objetos donde cada objeto represente un producto con propiedades como nombre, precio, y cantidad. Implementar funciones para:
 Agregar productos.
@@ -208,8 +275,6 @@ const productosBaratos = arregloProductos.filter(function(producto){
     return producto.precio < 2000;
 });
 console.log(productosBaratos);
-
-/* ACTIVIDAD PRÁCTICA - TERCERA PARTE: */
 
 //1. Crea un arreglo con 5 números y muestra el tercero en consola
 let arrNumeros = [4,5,6,7,8];
