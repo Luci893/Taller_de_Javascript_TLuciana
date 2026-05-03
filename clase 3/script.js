@@ -56,7 +56,7 @@ for(let i=0; i<inputsForm.length; i++){
 document.getElementById("parrafo2").textContent = "Hola mundo"; */
 
 
-/* ACTIVIDAD PRÁCTICA - PRIMER PARTE: */
+/* ACTIVIDAD PRÁCTICA - PRIMERA PARTE: */
 
 // 1. Selecciona un elemento por su ID y cambia su texto.
 document.getElementById("email").textContent = "Correo electrónico";
@@ -113,6 +113,48 @@ divModificar.innerHTML += '<input type="date" class="form-control" id="exampleIn
     ○	Crear un formulario interactivo que:
         ■	Valide un campo de texto en tiempo real.
         ■	Muestre un mensaje de confirmación al enviarlo. */
+    
+//Creo formulario
+const formUsu = document.createElement("form");
+
+const labelUsu = document.createElement("label");
+labelUsu.setAttribute("for", "inputUsu");
+labelUsu.textContent = "Ingrese su nombre: ";
+const inputUsu = document.createElement("input");
+inputUsu.type = "text";
+inputUsu.setAttribute("id", "inputUsu");
+
+const labelContra = document.createElement("label");
+labelContra.setAttribute("for", "inputContra");
+labelContra.textContent = "Ingrese su contraseña: ";
+const inputContra = document.createElement("input");
+inputContra.type = "password";
+inputContra.setAttribute("id", "inputContra");
+
+const btnEnviar = document.createElement("button");
+btnEnviar.textContent = "Enviar";
+btnEnviar.type = "submit";
+
+// Guardar elementos en el formulario
+formUsu.appendChild(labelUsu);
+formUsu.appendChild(inputUsu);
+formUsu.appendChild(labelContra);
+formUsu.appendChild(inputContra);
+formUsu.appendChild(btnEnviar);
+
+// Agregar formulario al body
+document.body.appendChild(formUsu);
+
+// Validar
+formUsu.addEventListener('submit', function(e){
+    e.preventDefault(); // Evito que se envie el formulario
+
+    if(inputContra.value.length < 8){
+        alert("La contraseña debe tener 8 o más caracteres.");
+    } else {
+        alert(`Formulario enviado correctamente. Usuario: ${inputUsu.value}`)
+    }
+})
 
 // 1. Crea un botón que muestre un mensaje en consola al hacer clic.
 const botonMensaje = document.getElementById("btnLimpiar");
@@ -122,7 +164,7 @@ botonMensaje.addEventListener('click', function(){
 
 // 2. Haz que un campo de texto cambie su color de fondo al escribir en él.
 const campoApellido = document.getElementById("exampleInputApellido");
-campoApellido.addEventListener("click", function(){
+campoApellido.addEventListener("keyup", function(){
     campoApellido.style.backgroundColor = "lightblue";
 });
 
@@ -136,7 +178,18 @@ botonContador.addEventListener('click', function(){
 });
 
 // 4. Muestra un mensaje de error si un campo de texto está vacío al enviar un formulario.
+const mensajeError = document.createElement("span");
+mensajeError.style.color = "red";
+formUsu.appendChild(mensajeError);
 
+formUsu.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(inputUsu.value === "" || inputContra.value === "") {
+        mensajeError.textContent = "Debe completar todos los campos para enviar el formulario.";
+    } else {
+        mensajeError.textContent = "";
+    }
+});
 
 // 5. Cambia la posición de un elemento cuando se pase el ratón sobre él.
 const parrafo1 = document.getElementById("parrafo1");
@@ -152,14 +205,10 @@ inputTecla.addEventListener('keydown', function(e) {
     console.log('Tecla presionada:', e.key);
 });
 
-
 // 7. Implementa un botón que oculte o muestre un elemento al hacer clic (toggle).
 const botonToggle = document.getElementById("botonMostrar");
-const parrafoToggle = document.createElement("p");
+const parrafoToggle = document.getElementById("parrMostrar");
 parrafoToggle.textContent = "Este es mi párrafo mostrado.";
-
-//Agrego al inicio
-document.body.appendChild(parrafoToggle);
 
 botonToggle.addEventListener('click', function(){
     // Si esta oculto, lo muestra
@@ -172,8 +221,50 @@ botonToggle.addEventListener('click', function(){
 });
 
 // 8. Crea un campo de selección (dropdown) que actualice un párrafo con la opción seleccionada.
+const select = document.getElementById("select");
+const parrafoSelect = document.getElementById("parrSelect");
+
+select.addEventListener('change', function(){
+    parrafoSelect.textContent = `Opcion Seleccionada: ${this.value}`;
+})
+
 // 9. Implementa un formulario con validación para correos electrónicos.
+
+//Crear email
+const formEmail = document.createElement("form");
+const inputEmail = document.createElement("input");
+inputEmail.type = "email";
+inputEmail.placeholder = "Ingrese su correo electrónico";
+const mensError = document.createElement("span");
+const btnEnviarEmail = document.createElement("button");
+btnEnviarEmail.textContent = "Enviar";
+
+// Colocar elementos dentro del formulario
+formEmail.appendChild(inputEmail);
+formEmail.appendChild(mensError);
+formEmail.appendChild(btnEnviarEmail);
+
+// Agregar formulario al body
+document.body.appendChild(formEmail);
+
+// Validar Email
+formEmail.addEventListener('submit', function(e){
+    e.preventDefault(); // Evitar que se envíe el formulario
+    
+    if(!inputEmail.value.includes("@")){
+        mensError.textContent = "Correo Electrónico inválido. Verfique que contenga @";
+    }else{
+        mensError.textContent = "Correo Electrónico válido.";
+        alert(`Correo enviado: ${inputEmail.value}`);
+    }
+});
+
 // 10. Haz un evento que cambie el texto de un botón al hacer clic en él.
+btnEnviarEmail.addEventListener('click', function(){
+    if (inputEmail.value.includes("@")){
+        this.textContent = "Enviado";
+    }
+})
 
 /* PRACTICA EN CLASE - OBJETOS Y ARREGLOS
 // Objetos
